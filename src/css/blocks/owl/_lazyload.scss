@@ -1,0 +1,17 @@
+.owl-carousel {
+	.owl-item {
+		.owl-lazy {
+				opacity: 0;
+				transition: opacity 400ms ease;
+		}
+		
+		.owl-lazy[src^=""], .owl-lazy:not([src]) {
+			max-height: 0;
+		}
+
+		img.owl-lazy {
+			transform-style: preserve-3d;
+		}
+	}
+}
+

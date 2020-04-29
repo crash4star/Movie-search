@@ -1,0 +1,136 @@
+.login-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 27rem;
+  padding: 70px;
+  background-color: #000000bb;
+  transition: all 0.4s ease;
+
+  @media (max-width: 500px) {
+    width: 17rem;
+    padding: 40px;
+  }
+}
+
+.login-form label {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 30px;
+  margin-bottom: 15px;
+  transition: all 0.4s ease;
+
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
+}
+
+.logo {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  width: 100px;
+  height: 30px;
+}
+
+.layout {
+  position: relative;
+}
+
+.layout::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #dddddd;
+  background-image: url('../img/login-layout.jpg');
+  background-repeat: repeat-x;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.4s ease;
+}
+
+.layout::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(-0.15turn, #202020c0, #131313f3);
+}
+
+.btn-in {
+  width: 100%;
+  height: 50px;
+  background-color: #df2525;
+  font-weight: 500;
+}
+
+.btn-in:focus {
+  box-shadow: none;
+}
+
+.input-in {
+  background-color: #3b3b3b;
+  border: none;
+  height: 50px;
+  padding: 20px;
+  transition: all 0.4s ease;
+  color: #ffffff;
+}
+
+.input-in:focus {
+  background-color: #494949;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.is-invalid {
+  border-bottom: 3px solid #df2525;
+}
+
+.is-invalid:focus {
+  box-shadow: none;
+}
+
+.alert {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #df2525ab;
+  color: #ffffff;
+  border-radius: 0;
+  animation: alertDown;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes alertDown {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -150%);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translate(-50%, 25%);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, 10%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 10%);
+  }
+}
+
+
+

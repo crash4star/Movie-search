@@ -1,0 +1,68 @@
+.navbar-user {
+  padding: 12px;
+  padding-left: 60px;
+  padding-right: 60px;
+  background-color: #1f1f1f;
+}
+
+.options a {
+  font-size: 15px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.a-actve {
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: default;
+}
+
+.user-profile {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-image: url('../img/user-icon.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.user-profile::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-image: url('../img/down-arrow.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.search {
+  width: 30rem;
+}
+
+.user input {
+  background-color: #f3f3f3;
+}
+
+.user input:focus {
+  box-shadow: none;
+  border-color: #dddddd;
+  background-color: #ffffff;
+}
+
+.movies-body:before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(#474747, #131313);
+  z-index: -1;
+}

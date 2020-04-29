@@ -3,10 +3,10 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
 const ENV = process.env.npm_lifecycle_event;
 const isDev = ENV === 'dev';
 const isProd = ENV === 'build';
+const webpack = require('webpack');
 
 function setDevTool() {
   if (isDev) {
@@ -26,7 +26,9 @@ function setDMode() {
 
 const config = {
   target: "web",
-  entry: {index: './src/js/index.js'},
+  entry: {
+    index: './src/js/index.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js'
@@ -45,7 +47,7 @@ const config = {
       },
       {
         test: /\.js$/,
-        use: ['babel-loader'/* , 'eslint-loader' */],
+        use: ['babel-loader' /* , 'eslint-loader' */ ],
         exclude: [
           /node_modules/
         ]
@@ -62,7 +64,12 @@ const config = {
             }
           }, {
             loader: 'postcss-loader',
-            options: { sourceMap: true, config: { path: './postcss.config.js' } }
+            options: {
+              sourceMap: true,
+              config: {
+                path: './postcss.config.js'
+              }
+            }
           }
         ]
       },
@@ -78,7 +85,12 @@ const config = {
             }
           }, {
             loader: 'postcss-loader',
-            options: { sourceMap: true, config: { path: './postcss.config.js' } }
+            options: {
+              sourceMap: true,
+              config: {
+                path: './postcss.config.js'
+              }
+            }
           }, {
             loader: 'sass-loader',
             options: {
@@ -98,18 +110,18 @@ const config = {
         }]
       },
       {
-        test: /\.(jpe?g|png|svg|gif)$/,
-        use: [
-          {
+        test: /\.(jpe?g|png|svg|gif|ico)$/,
+        use: [{
             loader: 'file-loader',
             options: {
               outputPath: 'img',
               name: '[name].[ext]'
-            }},
+            }
+          },
           {
             loader: 'image-webpack-loader',
             options: {
-              bypassOnDebug : true,
+              bypassOnDebug: true,
               mozjpeg: {
                 progressive: true,
                 quality: 75
@@ -154,11 +166,21 @@ const config = {
       template: './src/index.html',
       filename: './index.html'
     }),
+    new HtmlWebPackPlugin({
+      template: './src/movies.html',
+      filename: './movies.html'
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    }),
     new CopyWebpackPlugin([
       // {from: './src/static', to: './'},
       // {from: './src/img', to: './img/'},
     ]),
   ],
+
 
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
@@ -168,11 +190,11 @@ const config = {
     stats: 'errors-only',
     clientLogLevel: 'none'
   }
-}
+};
 
 if (isProd) {
   config.plugins.push(
-    new UglifyJSPlugin(),
+    new UglifyJSPlugin()
   );
 };
 
