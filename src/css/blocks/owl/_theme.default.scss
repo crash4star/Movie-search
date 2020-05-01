@@ -1,6 +1,6 @@
-$color-base:			#869791 !default;
+$color-base:			#b9b9b9 !default;
 $color-white:			#FFF !default;
-$color-gray:			#D6D6D6 !default;
+$color-gray:			#646464 !default;
 
 //nav
 
@@ -12,14 +12,14 @@ $nav-margin: 			5px !default;
 $nav-padding: 			4px 7px !default;
 $nav-background: 		$color-gray !default;
 $nav-background-hover:	$color-base !default;
-$nav-disabled-opacity: 	0.5 !default;
+$nav-disabled-opacity: 	0 !default;
 
 //dots
 
-$dot-width:				10px !default;
-$dot-height:			10px !default;
-$dot-rounded:			30px !default;
-$dot-margin: 			5px 7px !default;
+$dot-width:				15px !default;
+$dot-height:			3px !default;
+$dot-rounded:			0 !default;
+$dot-margin: 			2px 1px !default;
 $dot-background:		$color-gray !default;
 $dot-background-active:	$color-base !default;
 
