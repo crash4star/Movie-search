@@ -1,9 +1,7 @@
 .main-footer {
-  width: 35rem;
-  position: fixed;
-  bottom: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 250px;
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .rs-school {
@@ -31,7 +29,7 @@
 }
 
 .footer-info a:hover  {
-  color: #ffdd2d;
+  color: #f3c221;
   text-decoration: none;
 }
 

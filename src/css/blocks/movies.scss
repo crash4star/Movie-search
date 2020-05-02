@@ -1,13 +1,24 @@
 .navbar-user {
   padding: 12px;
-  padding-left: 70px;
-  padding-right: 70px;
   background-color: #000000;
+
+  @media (max-width: 767px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.main-content {
+  width: 90%;
 }
 
 .nav-width-wrapper {
   max-width: 1500px;
   margin: 0 auto;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 }
 
 .a-basic {
@@ -15,6 +26,14 @@
   color: #a3a3a3;
   text-decoration: none;
   transition: all 0.4s ease;
+
+  @media (max-width: 1000px) {
+    font-size: 0;
+
+    i {
+      font-size: 15px;
+    }
+  }
 }
 
 .a-basic:hover {
@@ -36,6 +55,14 @@
   font-weight: 700;
   text-decoration: none;
   cursor: default;
+
+  @media (max-width: 1000px) {
+    font-size: 0;
+
+    i {
+      font-size: 15px;
+    }
+  }
 }
 
 .a-actve i {
@@ -52,33 +79,6 @@
   transform: translateY(-2px);
 }
 
-.user-profile {
-  position: relative;
-  width: 35px;
-  height: 35px;
-  border: none;
-  border-radius: 5px;
-  background-image: url('../img/user-icon.jpg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  outline-color: transparent;
-}
-
-.user-profile::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -50%;
-  transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
-  background-image: url('../img/down-arrow.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-
 .movies-body:before {
   content: "";
   position: fixed;
@@ -88,57 +88,17 @@
   z-index: -1;
 }
 
-.user-drop-menu {
-  position: absolute;
-  top: 60px;
-  right: 0;
-  width: 200px;
-  background-color: rgba($color: #000000, $alpha: 0.8);
-  z-index: 50;
-}
-
-.user-drop-menu::after {
-  content: "";
-  position: absolute;
-  top: -17px;
-  right: 8px;
-  width: 0;
-  height: 0;
-  border: 9px solid rgba($color: #000000, $alpha: 0.8);
-  border-right-color: transparent;
-  border-left-color: transparent;
-  border-top-color: transparent;
-  z-index: 200;
-}
-
-.user-drop-wrapper {
-  position: absolute;
-  top: 15px;
-  right: 83px;
-  transition: all 0.4s ease;
-  z-index: 30;
-  transform-origin: 10px 50px;
-  animation: dropMenu;
-  animation-duration: 0.4s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes dropMenu {
-  0% {
-    transform: scale(0);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
 .search-btn {
   width: 35px;
   height: 35px;
+  margin-right: 10px;
   border: none;
   background-color: #a3a3a3;
   border-radius: 5px;
+
+  @media (max-width: 767px) {
+    margin-right: 20px;
+  }
 }
 
 .search-btn i {
@@ -169,13 +129,40 @@
 
 .movie-item {
   position: relative;
-  max-width: 42rem;
-  min-height: 29rem;
-  background-color: #ffffff;
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
   animation: faderBasic;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
+}
+
+.item-wrapper {
+  @media (min-width: 0px) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 20px;
+    padding-top: 100px;
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+
+  @media (min-width: 768px) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 20px;
+    margin-top: 20px;
+    padding-top: 0;
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+
+  @media (max-width: 1199px) {
+    width: 94.5%;
+  }
 }
 
 .global-movie-bg {
@@ -183,47 +170,113 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  border-radius: 10px 10px 0 0;
-  background: linear-gradient(0.30turn, #000000, #757575);
-  z-index: 1;
+  height: 15rem;
 }
 
-.global-movie-bg::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 8.7px 8.7px 0 0;
-  background-color: rgba(0, 0, 0, 0.6);
-}
+.poster-wrapper {
+  @media (min-width: 0px) {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 35rem;
+    outline: 1px solid red;
+  }
 
-.bg-wrapper {
-  position: relative;
-  padding-right: 30px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  width: 27rem;
-}
+  @media (min-width: 768px) {
+    width: 28%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translate(0%, 0%);
+  }
 
-.info-block {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  width: 10.5rem;
-  z-index: 2;
+  @media (min-width: 1200px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 37%;
+    height: 100%;
+  }
 }
 
 .info-poster {
-  width: 100%;
-  height: 15rem;
-  margin-bottom: 20px;
-  background-color: #dddddd;
-  border-radius: 10px;
-  background-image: url('https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.15);
+  @media (min-width: 0px) {
+    position: relative;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 30rem;
+    background-color: #dddddd;
+    border-radius: 10px;
+    background-image: url('https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+  }
+
+  @media (min-width: 768px) {
+    position: absolute;
+    top: -17px;
+    left: -17px;
+    width: 100%;
+    height: 85%;
+  }
+
+  @media (min-width: 1200px) {
+    height: 61%;
+  }
+
+  @media (min-width: 1300px) {
+    height: 66%;
+  }
+
+  @media (min-width: 1400px) {
+    height: 70%;
+  }
+
+  @media (min-width: 1500px) {
+    height: 80%;
+  }
+
+  @media (min-width: 1600px) {
+    height: 90%;
+  }
+
+  @media (max-width: 1199px) {
+    height: 100%;
+  }
+
+  @media (max-width: 1199px) {
+    height: 100%;
+  }
+
+  @media (max-width: 1100px) {
+    height: 90%;
+  }
+
+  @media (max-width: 1000px) {
+    height: 70%;
+  }
+
+  @media (max-width: 900px) {
+    height: 75%;
+  }
+
+  @media (max-width: 800px) {
+    height: 65%;
+  }
+}
+
+.logo-relative {
+  @media (max-width: 767px) {
+    display: none;
+  }
 }
 
 .info-time,
@@ -232,6 +285,7 @@
   margin: 2px;
   font-size: 13px;
   color: #949494;
+  margin-right: 10px;
 }
 
 .info-genres {
@@ -253,50 +307,69 @@
 }
 
 .about {
-  position: relative;
-  width: 27rem;
-  margin-top: 30px;
-  padding-right: 30px;
-  padding-bottom: 30px;
-  z-index: 2;
+  @media (min-width: 0px) {
+    width: 100%;
+    margin-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    z-index: 2;
+  }
+
+  @media (min-width: 768px) {
+    width: 73%;
+    margin-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    z-index: 2;
+  }
+
+  @media (min-width: 1199px) {
+    position: relative;
+    width: 67%;
+
+  }
 }
 
 .about-name {
-  margin-bottom: 30px;
-  font-weight: 300;
-  color: #ffffff;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #333333;
 }
 
-.about-imdb,
-.about-meta {
-  position: relative;
-  margin-left: 45px;
-  margin-right: 25px;
-  font-weight: 500;
-  color: #ffffff;
-}
-
-.about-imdb::before,
-.about-meta::before {
-  content: "";
+.about-rating {
   position: absolute;
-  top: -5px;
-  left: -45px;
-  width: 35px;
-  height: 35px;
+  background-color: #ffffff;
+}
+
+.about-imdb-middle {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  padding: 8px;
+  font-weight: 500;
+  color: #333333;
   border-radius: 5px;
   background-color: #ffdd2d;
-  background-repeat: no-repeat;
-  background-size: 70%;
-  background-position: center;
 }
 
-.about-imdb::before {
-  background-image: url('../img/imdb-logo.png');
+.about-imdb-low {
+  color: #ffffff;
+  background-color: #ee3f33;
 }
 
-.about-meta::before {
-  background-image: url('../img/meta-logo.png');
+.about-imdb-high {
+  color: #ffffff;
+  background-color: #28da72;
+}
+
+.about-static {
+  display: flex;
+  align-items: center;
 }
 
 .about-description {
@@ -315,12 +388,16 @@
 
 .about-add-favorite {
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 5px;
+  left: 5px;
   width: 35px;
   height: 35px;
   background-color: transparent;
   border: none;
+}
+
+.about-add-favorite path {
+  fill: #333333;
 }
 
 .add-active path {

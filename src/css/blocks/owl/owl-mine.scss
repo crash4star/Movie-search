@@ -2,12 +2,16 @@
   max-width: 1420px;
   margin: 0 auto;
   margin-top: 90px;
-  margin-bottom: -50px;
+  margin-bottom: 50px;
 }
 
 .owl-nav {
   height: 0;
   margin: 0;
+}
+
+.owl-next {
+  display: none;
 }
 
 .owl-carousel .owl-nav .owl-prev:before {
@@ -46,6 +50,13 @@
 
 .owl-carousel:hover .owl-nav .owl-next:after {
   opacity: 1;
+}
+
+.owl-dots {
+  position: absolute;
+  top: -40px;
+  right: 25px;
+  z-index: 500;
 }
 
 .owl-carousel:hover .owl-dots  {

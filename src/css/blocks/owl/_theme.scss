@@ -14,11 +14,13 @@
 			display: inline-block;
 			cursor: pointer;
 			border-radius: 3px;
+			outline: none;
 
 			&:hover {
 				background: $nav-background-hover;
 				color:$nav-color-hover;
 				text-decoration: none;
+				outline: none;
 			}
 		}
 		.disabled {
@@ -32,9 +34,6 @@
 	}
 
 	.owl-dots {
-		position: absolute;
-		top: -30px;
-		right: 60px;
 		transition: all 0.4s ease;
 		opacity: 0;
 		text-align: center;

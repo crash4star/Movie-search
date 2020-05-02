@@ -3,25 +3,26 @@ function mineOwlCarousel() {
 
   if (owl) {
     $(document).ready(function () {
-      $('#owl-2 .owl-carousel').owlCarousel({
-        margin: 40,
+      $('.owl-carousel').owlCarousel({
+        margin: 10,
         loop: false,
         navSpeed: 500,
         dots: true,
         dotsEach: true,
         nav: true,
-        navText: ['', ''],
-        animateOut: 'slideOutDown',
-        animateIn: 'flipInX',
+        responsiveClass: true,
         responsive: {
           0: {
-            items: 1
+            items: 1,
+            nav: true
           },
-          600: {
-            items: 2
+          1199: {
+            items: 1,
+            nav: true
           },
-          1000: {
-            items: 2
+          1200: {
+            items: 2,
+            nav: true,
           }
         }
       });
