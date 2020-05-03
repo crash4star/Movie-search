@@ -1,11 +1,27 @@
+@import "./blocks/global/global.scss";
 @import "./blocks/login.scss";
-@import "./blocks/movies.scss";
-@import "./blocks/footer.scss";
 @import "./animations/mine-animations.scss";
 @import "./blocks/owl/owl.carousel.scss";
 @import "./blocks/owl/owl.theme.default.scss";
 @import "./blocks/owl/owl.theme.green.scss";
 @import "./blocks/owl/owl-mine.scss";
+
+
+// body > * {
+//   outline: 1px solid red;
+// }
+
+// body > *  > * {
+//   outline: 1px solid blue;
+// }
+
+// body > *  > * > * {
+//   outline: 1px solid green;
+// }
+
+// body > *  > * > * > * {
+//   outline: 1px solid white;
+// }
 
 
 
