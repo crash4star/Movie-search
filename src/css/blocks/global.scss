@@ -1,0 +1,238 @@
+@import "./blocks/variables/custom-vars.scss";
+
+.global-body {
+  position: relative;
+}
+
+.global-body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(#14121b, #756fac);
+  z-index: -1;
+}
+
+.global-root {
+  position: relative;
+  max-width: 1450px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.content-wrapper {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.app-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.holder-header {
+  position: relative;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.holder-header-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 1450px;
+  height: 5rem;
+  margin: 0 auto;
+  z-index: 2;
+
+  @media (max-width: 767px) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30rem;
+
+  @media (max-width: 767px) {
+    margin-left: 2rem;
+  }
+}
+
+.search-input {
+  position: relative;
+  width: 100%;
+  padding: 2%;
+  padding-right: 8%;
+  background-color: #38364b;
+  border: none;
+  color: #ffffff;
+  transition: all 0.4s ease;
+  outline: none;
+
+  @media (max-width: 767px) {
+    padding: 0.5rem;
+    padding-right: 21%;
+  }
+
+  &::-webkit-input-placeholder {
+    color: #635e8f;
+  }
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px #a19ae0;
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 1px #8c86c5;
+    color: #ffffff;
+  }
+
+  &:focus+&-btn-start i {
+    color: #ffffff;
+  }
+
+  &-btn {
+    width: 3rem;
+    height: 2.9rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+
+    & i {
+      color: #756fac;
+      font-size: 18px;
+      transition: all 0.4s ease;
+    }
+  }
+
+  &-btn-reset {
+    position: absolute;
+    top: 51%;
+    right: 7.5rem;
+    transform: translate(-50%, -40%);
+    width: 2rem;
+    height: 2rem;
+    outline-color: transparent;
+    cursor: pointer;
+
+    @media (max-width: 767px) {
+      right: 1.5rem;
+    }
+  }
+}
+
+.user-bar {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+
+  @media (max-width: 767px) {
+    margin-left: 0;
+  }
+
+  &-dropdown-btn {
+    position: relative;
+    width: 2.9rem;
+    height: 2.9rem;
+    margin-right: 1rem;
+    background-image: url('../img/user-icon.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: #dddddd;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+
+    @media (max-width: 767px) {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 60%;
+      right: -55%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      border: 7px solid #ffffff;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      border-right-color: transparent;
+
+      @media (max-width: 767px) {
+        right: -65%;
+      }
+    }
+
+    & i {
+      color: #838383;
+      font-size: 18px;
+      transition: all 0.4s ease;
+    }
+  }
+
+  &-dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    width: 12rem;
+    background-color: #292835;
+    box-shadow: 0 5px 30px 10px rgba(0,0,0,0.2);
+    z-index: 10;
+
+    @media (max-width: 767px) {
+      left: 0;
+    }
+  }
+
+  &-dropdown-item:not(:first-child) {
+    position: relative;
+    padding: 7%;
+    color: #adadad;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    & i {
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      transition: all 0.4s ease;
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover:not(:first-child) {
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #635ca1;
+    }
+
+    &:hover:nth-child(2) i {
+      text-decoration: none;
+      color: #ff2d49;
+      background-color: #635ca1;
+    }
+  }
+
+  &-dropdown-item:first-child {
+    font-size: 12px;
+    padding: 4%;
+    padding-left: 7%;
+    padding-right: 7%;
+    color: #adadad;
+    text-decoration: none;
+    cursor: default;
+  }
+}

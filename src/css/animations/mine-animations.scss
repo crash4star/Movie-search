@@ -3,7 +3,58 @@
     opacity: 0;
   }
 
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes faderBasicOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scaleInBasic {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleInBasicJump {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes moveDownInBasicJump {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+
   50% {
     opacity: 1;
+    transform: translate(-50%, -40%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
   }
 }

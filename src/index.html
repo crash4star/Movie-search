@@ -12,38 +12,29 @@
 </head>
 
 <body class="global-body">
-    <div class="container global-root">
-        <img class="app-logo" src="./img/logo-mobile.png" alt="logo">
-        <div class="sign d-none">
-            <button class="btn-sign btn-sign-in">Sign in</button>
-            <button class="btn-sign btn-sing-up">Sign up</button>
-        </div>
-        <div class="user-global-wrapper d-none">
-            <div class="user-name">
-                <h2 class="user-name-headline">Sing in</h2>
-                <div class="user-name-input-wrapper">
-                    <input class="user-name-input" type="text" id="username" placeholder="Enter your username">
-                    <button class="user-name-btn"></button>
+    <div class="bg-wrapper"></div>
+    <div class="global-root">
+        <div class="content-wrapper" id="content-wrapper">
+            <div class="sign">
+                <button class="btn-sign btn-sign-in" id="sign-in">Sign in</button>
+            </div>
+            <div class="user-global-wrapper d-none">
+                <div class="user-name">
+                    <h2 class="user-name-headline">Sing in</h2>
+                    <div class="user-name-input-wrapper">
+                        <input class="user-name-input" type="text" id="username" placeholder="Enter your username">
+                        <button class="user-name-btn"></button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="user-genres">
-            <h2 class="user-genres-headline">Choose favourite genres</h2>
-            <small class="user-genres-minimum">Minimum 3</small>
-            <div class="user-genres-wrapper">
-                <button class="user-genres-btn user-genres-btn--comedy user-genres-btn--active">Comedy</button>
-                <button class="user-genres-btn user-genres-btn--horror">Horror</button>
-                <button class="user-genres-btn user-genres-btn--action">Action</button>
-                <button class="user-genres-btn user-genres-btn--superhero">Superhero</button>
-                <button class="user-genres-btn user-genres-btn--fantasy">Fantasy</button>
-                <button class="user-genres-btn user-genres-btn--sci-fi">Sci-fi</button>
-                <button class="user-genres-btn user-genres-btn--animation">Animation</button>
-                <button class="user-genres-btn user-genres-btn--romance">Romance</button>
-                <button class="user-genres-btn user-genres-btn--thriller">Thriller</button>
-                <button class="user-genres-btn user-genres-btn--drama">Drama</button>
+        <footer class="main-footer">
+            <div class="main-footer-wrapper">
+                <p class="main-footer-rs">RS School 2020q1</p>
+                <span class="main-footer-line"></span>
+                <a href="https://github.com/crash4star" target="_blank" class="main-footer-git">crash4star<i class="fab fa-github"></i></a>
             </div>
-            <button class="start-page-btn">Let's go</button>
-        </div>
+        </footer>
     </div>
 </body>
 

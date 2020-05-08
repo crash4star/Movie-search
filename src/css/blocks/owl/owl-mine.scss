@@ -1,5 +1,5 @@
 #movies-slider {
-  max-width: 1420px;
+  max-width: 100%;
   margin: 0 auto;
   margin-top: 90px;
   margin-bottom: 50px;
@@ -10,15 +10,11 @@
   margin: 0;
 }
 
-.owl-next {
-  display: none;
-}
-
 .owl-carousel .owl-nav .owl-prev:before {
   content: "";
   position: absolute;
   top: 0;
-  left: -60px;
+  left: -75px;
   width: 60px;
   height: 100%;
   background-image: url('../img/left-arrow.svg');
@@ -27,13 +23,17 @@
   background-position: center;
   transition: all 0.4s ease;
   opacity: 0;
+
+  @media (max-width: 1000px) {
+    left: -60px;
+  }
 }
 
 .owl-carousel .owl-nav .owl-next:after {
   content: "";
   position: absolute;
   top: 0;
-  right: -50px;
+  right: -75px;
   width: 60px;
   height: 100%;
   background-image: url('../img/right-arrow.svg');
@@ -42,6 +42,14 @@
   background-position: center;
   transition: all 0.4s ease;
   opacity: 0;
+
+  @media (max-width: 1000px) {
+    right: -60px;
+  }
+}
+
+.disabled {
+  cursor: default;
 }
 
 .owl-carousel:hover .owl-nav .owl-prev:before {
@@ -53,13 +61,22 @@
 }
 
 .owl-dots {
-  position: absolute;
-  top: -40px;
-  right: 25px;
-  z-index: 500;
+  @media (min-width: 0px) {
+    position: absolute;
+    top: -35px;
+    right: 0;
+    z-index: 500;
+  }
+
+  @media (min-width: 768px) {
+    right: 20px;
+  }
+
+  @media (min-width: 1213px) {
+    right: 25px;
+  }
 }
 
-.owl-carousel:hover .owl-dots  {
+.owl-carousel:hover .owl-dots {
   opacity: 1;
 }
-

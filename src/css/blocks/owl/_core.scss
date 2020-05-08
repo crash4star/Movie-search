@@ -25,6 +25,8 @@
 	.owl-stage-outer {
 		position: relative;
 		overflow: hidden;
+		min-height: 20rem;
+		max-height: 45rem;
 		/* fix for flashing background */
 		-webkit-transform: translate3d(0px, 0px, 0px);
 	}
@@ -39,9 +41,12 @@
 		-ms-transform: translate3d(0,0,0);
 	}
 
+	.owl-wrapper {
+		margin-bottom: 25rem;
+	}
+
 	.owl-item {
 		position: relative;
-		min-height: 1px;
 		-webkit-backface-visibility: hidden;
 		-webkit-tap-highlight-color: transparent;
 		-webkit-touch-callout: none;
@@ -60,7 +65,7 @@
 	.owl-nav .owl-prev,
 	.owl-nav .owl-next,
 	.owl-dot {
-		cursor: pointer;
+		cursor: default;
 		-webkit-user-select: none;
 		-khtml-user-select: none;
 		-moz-user-select: none;

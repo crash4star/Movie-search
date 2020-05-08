@@ -4,25 +4,29 @@ function mineOwlCarousel() {
   if (owl) {
     $(document).ready(function () {
       $('.owl-carousel').owlCarousel({
-        margin: 10,
+        margin: 15,
         loop: false,
         navSpeed: 500,
         dots: true,
-        dotsEach: true,
-        nav: true,
         responsiveClass: true,
         responsive: {
           0: {
             items: 1,
-            nav: true
+            nav: false,
+            dots: true,
           },
-          1199: {
+          768: {
             items: 1,
             nav: true
           },
-          1200: {
+          1214: {
             items: 2,
             nav: true,
+          },
+          1280: {
+            items: 2,
+            nav: true,
+            dotsEach: false
           }
         }
       });

@@ -4,7 +4,8 @@ import 'jquery';
 import 'popper.js';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
-import mineOwlCarousel from "./blocks/owl-mine";
+import singInOut from "./blocks/sign/sign-in-out";
+import startApp from "./blocks/app/start-app";
 
-mineOwlCarousel();
+singInOut();
 
