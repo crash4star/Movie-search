@@ -21,10 +21,11 @@
 }
 
 .content-wrapper {
-  height: 90vh;
+  height: 15vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin-bottom: -15rem;
 }
 
 .app-logo {

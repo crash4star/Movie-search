@@ -1,6 +1,7 @@
 import localStorageItem from "../options-functions/local-storage-get-set";
 import sendRequest from "../options-functions/send-request";
 import moviesCreateCards from "./movies-create-cards";
+import sliderLoadNextPage from "../slider/slider-load-next-page";
 
 function movieSearchFromInput() {
   const searchInput = document.querySelector('#input-search');
@@ -20,21 +21,27 @@ function movieSearchFromInput() {
           console.log('load complete');
           requestUrl = data.text.join('');
           localStorageItem('set', 'request', requestUrl);
-          sendRequest('GET', `https://www.omdbapi.com/?s=${requestUrl}&page=${localStorageItem('get', 'request-page')}&apikey=c8ff1116`)
+          sendRequest('GET', `https://www.omdbapi.com/?s=${requestUrl}&page=${localStorageItem('get', 'request-page')}&apikey=23356196`)
             .then(res => {
               console.log('load complete');
-              moviesCreateCards(res.Search);
+              res.Search.forEach(item => {
+                moviesCreateCards(item.Title);
+              });
+              sliderLoadNextPage();
             })
-            .catch(err => console.log(`No results for "${searchInput.value}"`));
+            .catch(err => console.log(`No results for "${searchInput.value.trim()}"`));
         })
 
     } else {
 
       localStorageItem('set', 'request', searchInput.value);
-      sendRequest('GET', `https://www.omdbapi.com/?s=${searchInput.value}&page=${localStorageItem('get', 'request-page')}&apikey=c8ff1116`)
+      sendRequest('GET', `https://www.omdbapi.com/?s=${searchInput.value.trim()}&page=${localStorageItem('get', 'request-page')}&apikey=23356196`)
         .then(res => {
           console.log('load complete');
-          moviesCreateCards(res.Search);
+          res.Search.forEach(item => {
+            moviesCreateCards(item.Title);
+          });
+          sliderLoadNextPage();
         })
         .catch(err => {
           console.log(`No results for "${searchInput.value}"`);

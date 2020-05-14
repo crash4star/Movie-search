@@ -17,7 +17,7 @@ const content = {
                 </div>
             </div>
         </div>
-        <div class="movies-wrapper"></div>`
+        `
 };
 
 export default content;

@@ -8,6 +8,7 @@ function mineOwlCarousel() {
         loop: false,
         navSpeed: 500,
         dots: true,
+        dotsEach: true,
         responsiveClass: true,
         responsive: {
           0: {
@@ -25,12 +26,10 @@ function mineOwlCarousel() {
           },
           1280: {
             items: 2,
-            nav: true,
-            dotsEach: false
+            nav: true
           }
         }
       });
-
     });
   }
 }

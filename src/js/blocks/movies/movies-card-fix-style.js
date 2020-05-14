@@ -1,38 +1,4 @@
-function sliderFixStyle() {
-  const stylesForGenre = document.querySelectorAll('.movies-wrapper-genre p');
-  stylesForGenre.forEach((item, i, a) => {
-    const genres = item.textContent;
-    const resultGenresStyles = [];
-
-    genres.split(' ').forEach(genre => {
-      if (genre[genre.length - 1] === ',') {
-        resultGenresStyles.push(`<p class="movies-wrapper-genre-item">${genre.substring(0, genre.length - 1)}</p>`);
-      } else {
-        resultGenresStyles.push(`<p class="movies-wrapper-genre-item">${genre}</p>`);
-      }
-    });
-    a[i].parentNode.innerHTML = resultGenresStyles.join(' ');
-  });
-
-  const stylesForStarring = document.querySelectorAll('.movies-wrapper-starring p');
-  stylesForStarring.forEach((item, i, a) => {
-    const actor = item.textContent;
-    const resultActorStyles = [];
-
-    if (item.textContent === 'N/A') {
-      item.classList.add('hide');
-    }
-
-    actor.split(',').forEach(star => {
-      if (star[star.length - 1] === ',') {
-        resultActorStyles.push(`<p class="movies-wrapper-star">${star.substring(0, star.length - 1).trim()}</p>`);
-      } else {
-        resultActorStyles.push(`<p class="movies-wrapper-star">${star.trim()}</p>`);
-      }
-    });
-    a[i].parentNode.innerHTML = resultActorStyles.join(' ');
-  });
-
+function sliderFixStyle () {
   const hasEmptyDirector = document.querySelectorAll('.movies-wrapper-director');
   hasEmptyDirector.forEach(item => {
     if (item.textContent === 'N/A') {

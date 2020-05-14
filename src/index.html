@@ -7,7 +7,12 @@
     <title>Movie search</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script src="https://kit.fontawesome.com/610b32c0c4.js" crossorigin="anonymous"></script>
 </head>
 
@@ -28,11 +33,22 @@
                 </div>
             </div>
         </div>
+        <div class="movies-wrapper">
+            <div class="swiper-container d-none">
+                <div class="swiper-wrapper"></div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
         <footer class="main-footer">
             <div class="main-footer-wrapper">
                 <p class="main-footer-rs">RS School 2020q1</p>
                 <span class="main-footer-line"></span>
-                <a href="https://github.com/crash4star" target="_blank" class="main-footer-git">crash4star<i class="fab fa-github"></i></a>
+                <a href="https://github.com/crash4star" target="_blank" class="main-footer-git">crash4star<i
+                        class="fab fa-github"></i></a>
             </div>
         </footer>
     </div>

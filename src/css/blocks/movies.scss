@@ -1,9 +1,17 @@
 @import "./blocks/variables/custom-vars.scss";
 
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  padding-left: 3% !important;
+  padding-right: 3% !important;
+}
+
 .movies-wrapper {
   width: 83%;
-  height: 10rem;
+  height: 46rem;
   margin: 0 auto;
+  padding-top: 13rem;
 
   @media (min-width: 0px) {
     margin-top: 2rem;
@@ -11,6 +19,7 @@
 
   @media (min-width: 768px) {
     margin-top: 3.5rem;
+    padding-top: 11rem;
   }
 
   &-item {
@@ -18,7 +27,7 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: 30rem;
+      height: 33rem;
     }
 
     @media (min-width: 768px) {
@@ -220,11 +229,13 @@
         font-size: 10px;
         text-align: center;
         color: #ffffff;
+        line-height: 16px;
         background-color: #635ca1;
       }
 
       @media (min-width: 1214px) {
         font-size: 12px;
+        line-height: 18px;
       }
     }
   }
@@ -445,3 +456,20 @@
     }
   }
 }
+
+.swiper-button-next {
+  position: absolute !important;
+  top: 50% !important;
+  right: -1rem !important;
+  transform: translate(-50%, -50%);
+  z-index: 20 !important;
+}
+
+.swiper-button-prev {
+  position: absolute !important;
+  top: 50% !important;
+  left: 14px !important;
+  transform: translate(-50%, -50%);
+  z-index: 20 !important;
+}
+

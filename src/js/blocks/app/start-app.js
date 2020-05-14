@@ -1,20 +1,25 @@
 import movieSearchFromInput from "../movies/movie-search-from-input";
 import moviesStartUserGenres from "../movies/movies-start-user-genres";
-import sliderLoadNextPage from "../slider/slider-load-next-page";
+import localStorageItem from "../options-functions/local-storage-get-set";
 
 function startApp() {
+  localStorage.removeItem('request');
+  localStorage.removeItem('next-page');
+  localStorageItem('set', 'request-page', 1);
   moviesStartUserGenres();
-  
+
   const searchBtn = document.querySelector('.search-input-btn');
   const searchInput = document.querySelector('#input-search');
   const searchResetBtn = document.querySelector('.search-input-btn-reset');
-  
+
   if (searchBtn) {
     searchBtn.addEventListener('click', () => {
-      movieSearchFromInput();
+      localStorage.removeItem('start-page');
+      localStorageItem('set', 'next-page', true);
       setTimeout(() => {
-        sliderLoadNextPage();
-      }, 500);
+        localStorage.removeItem('next-page');
+      }, 300);
+      movieSearchFromInput();
     });
   }
 
@@ -26,10 +31,13 @@ function startApp() {
 
   document.addEventListener('keydown', (e) => {
     if (document.activeElement === searchInput && e.code === 'Enter') {
-      movieSearchFromInput();
+      localStorage.removeItem('start-page');
+      localStorageItem('set', 'next-page', true);
+
       setTimeout(() => {
-        sliderLoadNextPage();
-      }, 500);
+        localStorage.removeItem('next-page');
+      }, 300);
+      movieSearchFromInput();
     }
   });
 }

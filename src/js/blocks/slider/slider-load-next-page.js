@@ -1,54 +1,47 @@
 import localStorageItem from "../options-functions/local-storage-get-set";
 import sendRequest from "../options-functions/send-request";
+import moviesCreateCards from "../movies/movies-create-cards";
 
-function sliderLoadNextPage() {
-  const sliderItems = document.querySelectorAll('.owl-item');
-  const moviesWrapper = document.querySelector('.owl-stage');
-  const sliderWrapper = document.querySelector('.owl-carousel');
-  let nextPage = false;
-  const sliderItem = document.querySelectorAll('.owl-item');
+function sliderLoadNextPage(swiper) {
+  let page = 1;
 
-  document.addEventListener('mousedown', () => {
-    setTimeout(() => {
-      sliderItem.forEach((item, i, a) => {
-        if (a[a.length - 3].classList.contains('active')) {
-          alert('load next')
-        }
-      });
-    }, 500);
-  });
+  if (localStorageItem('get', 'next-page')) {
+    swiper.on('reachEnd', () => {
+      page += 1;
+      console.log(page);
 
+      console.log('end');
+      localStorageItem('set', 'request-page', page);
+      sendRequest('GET', `https://www.omdbapi.com/?s=${localStorageItem('get', 'request')}&page=${localStorageItem('get', 'request-page')}&apikey=23356196`)
+        .then(res => {
+          console.log('load complete');
+          console.log(res);
+          res.Search.forEach(item => {
+            moviesCreateCards(item.Title);
+          });
+          // sliderLoadNextPage();
+        })
+    })
+  };
   // document.addEventListener('mousedown', () => {
-  //   sliderItems.forEach((item, i, a) => {
-  //     if (a[a.length - 3].classList.contains('active')) {
-  //       nextPage = true;
-  //     }
-  //   });
-  //   if (nextPage) {
-  //     localStorageItem('set', 'request-page', (localStorageItem('get', 'request-page') + 1));
-  //     console.log(localStorageItem('get', 'request-page'));
+  //   if (localStorageItem('get', 'request') && localStorageItem('get', 'next-page')) {
+  //     localStorage.removeItem('next-page')
+  //     localStorageItem('set', 'request-page', localStorageItem('get', 'request-page') + 1);
   //     sendRequest('GET', `https://www.omdbapi.com/?s=${localStorageItem('get', 'request')}&page=${localStorageItem('get', 'request-page')}&apikey=c8ff1116`)
-  //           .then(res => {
-  //             console.log(res.Search);
-  //             sliderWrapper.innerHTML = sliderRenderCards(res.Search);
-  //             sliderFixStyle();
-  //             mineOwlCarousel();
-  //             nextPage = false;
-  //           })
-  //           .catch(err => console.log(err));
+  //       .then(res => {
+  //         console.log('load complete');
+  //         console.log(res);
+
+  //         res.Search.forEach(item => {
+  //           moviesCreateCards(item.Title);
+  //         });
+  //         // sliderLoadNextPage();
+  //       })
+  //       .catch(err => {
+  //         console.log(`No results for "${localStorageItem('get', 'request')}"`);
+  //       });
   //   }
   // });
-
-
 }
 
 export default sliderLoadNextPage;
-
-// sendRequest('GET', `https://www.omdbapi.com/?s=${requestUrl}&page=${localStorageItem('get', 'request-page')}&apikey=c8ff1116`)
-//             .then(res => {
-//               sliderWrapper.innerHTML = renderSliderCards(res.Search);
-//               setTimeout(() => {
-//                 sliderLoadNextPage();
-//               }, 500);
-//             })
-//             .catch(err => noResultsForRequest());

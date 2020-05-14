@@ -3,8 +3,11 @@ import sendRequest from "../options-functions/send-request";
 import shuffleArr from "../options-functions/shuffle-arr";
 import moviesCreateCards from "./movies-create-cards";
 import randomInteger from "../options-functions/random-integer";
+import sliderConfig from "../slider/slider-config";
 
 function moviesStartUserGenres() {
+  localStorageItem('set', 'start-page', true);
+
   const currentUser = localStorageItem('get', 'current-user');
   const currentUserData = localStorageItem('get', currentUser);
   const getMoviesIdFromUserGenres = [];
@@ -30,10 +33,16 @@ function moviesStartUserGenres() {
               });
               if (renderMoviesFromUserGenres.length < 20) {
                 shuffleArr(getMoviesFromUserGenres).forEach(randomMovie => {
-                  renderMoviesFromUserGenres.push({Title: randomMovie});
+                  renderMoviesFromUserGenres.push({
+                    Title: randomMovie
+                  });
+                });
+
+                renderMoviesFromUserGenres.forEach(item => {
+                  moviesCreateCards(item.Title);
+                  sliderConfig(item.Title)
                 });
                 
-                moviesCreateCards(renderMoviesFromUserGenres);
               }
             });
         });
