@@ -299,3 +299,17 @@
     }
   }
 }
+
+.pop-info {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  max-width: 270px;
+  padding: 1rem;
+  box-shadow: 0 5px 20px 3px rgba(0,0,0,0.2);
+  background-color: #9a8cc0;
+  color: #ffffff;
+  animation: moveDownInBasicJumpPop;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}

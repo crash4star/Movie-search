@@ -3,6 +3,7 @@ import sign from "../components/sign";
 import content from "../components/content";
 import signUserGenres from "./sign-user-genres";
 import startApp from "../app/start-app";
+import moviePop from "../movies/movie-pop";
 
 
 function singInOut() {
@@ -17,7 +18,7 @@ function singInOut() {
 
     nextGenresBtn.addEventListener('click', () => {
       if (usernameInput.value === '') {
-        alert('input empty');
+        moviePop('Please, enter you username')
       } else if (localStorageItem('get', usernameInput.value)) {
         globalWrapper.innerHTML = content.block;
         startApp();

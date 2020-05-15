@@ -49,6 +49,33 @@ function sliderFixStyle () {
       item.classList.add('hide');
     }
   });
+
+  const hasEmptyStar= document.querySelectorAll('.movies-wrapper-star');
+  hasEmptyStar.forEach(item => {
+    if (item.textContent === 'N/A') {
+      item.parentNode.classList.add('hide');
+    }
+  });
+
+  const hasEmptyPoster= document.querySelectorAll('.movies-wrapper-poster-src');
+  hasEmptyPoster.forEach(item => {
+    if (item.style.backgroundImage === 'url("N/A")') {
+      item.style.backgroundImage = 'url("https://raw.githubusercontent.com/crash4star-tester/mine_images/master/not-found.png")'
+    }
+  });
+
+  // const fixGenreStyles= document.querySelectorAll('.movies-wrapper-genre-item');
+  // fixGenreStyles.forEach(item => {
+  //   item.textContent.split(' ').forEach(text => {
+  //     item.innerHTML += `<p>${text}</p>`;
+  //   });
+  //   // if (item.textContent[text.length - 1] === ',') {
+  //   //   item.textContent.substring(0, item.textContent.length - 1)
+  //   //   item.innerHTML += `<p>${text}</p>`
+  //   // } else {
+  //   //   item.innerHTML += `<p>${text}</p>`
+  //   // }
+  //  });
 }
 
 export default sliderFixStyle;

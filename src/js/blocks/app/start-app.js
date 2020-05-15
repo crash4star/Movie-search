@@ -6,6 +6,8 @@ function startApp() {
   localStorage.removeItem('request');
   localStorage.removeItem('next-page');
   localStorageItem('set', 'request-page', 1);
+  localStorageItem('set', 'start-page', true);
+
   moviesStartUserGenres();
 
   const searchBtn = document.querySelector('.search-input-btn');
@@ -14,11 +16,13 @@ function startApp() {
 
   if (searchBtn) {
     searchBtn.addEventListener('click', () => {
+      localStorageItem('set', 'remove-slides', true);
+      setTimeout(() => {
+        localStorage.removeItem('remove-slides');
+      }, 1500);
+      localStorage.removeItem('start-slider');
       localStorage.removeItem('start-page');
       localStorageItem('set', 'next-page', true);
-      setTimeout(() => {
-        localStorage.removeItem('next-page');
-      }, 300);
       movieSearchFromInput();
     });
   }
@@ -31,12 +35,13 @@ function startApp() {
 
   document.addEventListener('keydown', (e) => {
     if (document.activeElement === searchInput && e.code === 'Enter') {
-      localStorage.removeItem('start-page');
-      localStorageItem('set', 'next-page', true);
-
+      localStorageItem('set', 'remove-slides', true);
       setTimeout(() => {
-        localStorage.removeItem('next-page');
-      }, 300);
+        localStorage.removeItem('remove-slides');
+      }, 1500);
+      localStorage.removeItem('start-page');
+      localStorage.removeItem('start-slider');
+      localStorageItem('set', 'next-page', true);
       movieSearchFromInput();
     }
   });

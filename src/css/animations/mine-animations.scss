@@ -58,3 +58,30 @@
     transform: translate(-50%, -50%);
   }
 }
+
+@keyframes moveDownInBasicJumpPop {
+  0% {
+    opacity: 0;
+    transform: translateY(-80%);
+  }
+
+  5% {
+    opacity: 1;
+    transform: translateY(10%);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  95% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-80%);
+  }
+}

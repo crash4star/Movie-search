@@ -1,52 +1,64 @@
 import localStorageItem from "../options-functions/local-storage-get-set";
-import sliderloadnextpage from "./slider-load-next-page";
+import sliderLoadNextPage from "./slider-load-next-page";
+import sliderFixStyle from "../movies/movies-card-fix-style";
 
-function sliderConfig(arr) {
-    const swiper = new Swiper('.swiper-container', {
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
+const swiper = new Swiper('.swiper-container', {
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+    },
+    slidesPerView: 2,
+    spaceBetween: 30,
+    observer: true,
+    observeParents: true,
+    loop: false,
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+            spaceBetween: 20
         },
-        slidesPerView: 2,
-        spaceBetween: 30,
-        observer: true,
-        observeParents: true,
-        dots: true,
-        loop: false,
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-            480: {
-                slidesPerView: 1,
-                spaceBetween: 30
-            },
-            1240: {
-                slidesPerView: 2,
-                spaceBetween: 40
-            }
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 20
         },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
+        480: {
+            slidesPerView: 1,
+            spaceBetween: 30
+        },
+        1240: {
+            slidesPerView: 2,
+            spaceBetween: 40
         }
-    });
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    }
+});
 
-    if (localStorageItem('get', 'start-page') !== true) {
+
+swiper.on('slideChange', () => {
+    if (swiper.activeIndex === swiper.slides.length - 3 && localStorageItem('get', 'request')) {
+        localStorageItem('set', 'request-page', localStorageItem('get', 'request-page') + 1);
+        sliderLoadNextPage();
+    }
+})
+
+function sliderConfig(movie) {
+    setTimeout(() => {
+        swiper.appendSlide(movie);
+        swiper.update();
+        setTimeout(() => {
+            sliderFixStyle();
+        }, 300);
+    }, 500);
+
+
+    if (localStorageItem('get', 'remove-slides')) {
         swiper.removeAllSlides();
         swiper.update();
     }
-
-    setTimeout(() => {
-        swiper.appendSlide(arr);
-        swiper.update();
-        setTimeout(() => {
-            swiper.slideToLoop(0, false, false);
-        }, 300);
-    }, 600);
-
-    sliderloadnextpage(swiper);
+    // sliderloadnextpage(swiper);
 }
 
 export default sliderConfig;
