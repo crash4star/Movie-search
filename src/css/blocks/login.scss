@@ -1,0 +1,315 @@
+@import "./blocks/variables/custom-vars.scss";
+
+.sign {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 13rem;
+  transition: all 0.4s ease;
+
+  @media (max-width: 767px) {
+    width: 10rem;
+  }
+}
+
+.btn-sign {
+  position: relative;
+  width: 100%;
+  padding: 10%;
+  background-color: #131313be;
+  border: none;
+  font-weight: 500;
+  color: #ffffff;
+  transition: all 0.4s ease;
+  animation: scaleInBasicJump;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+
+  & i {
+    margin-left: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &:hover {
+    padding-left: 9%;
+    background-color: #635ca1;
+    box-shadow: 0 5px 30px 5px #6f68af5b;
+
+    @media (max-width: 767px) {
+      padding-left: 10%;
+    }
+  }
+
+  &:hover i {
+    opacity: 1;
+    margin-left: 15%;
+  }
+}
+
+.user-global-wrapper {
+  width: 100%;
+  height: 100vh;
+
+  & .user-name {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25rem;
+    padding: 3%;
+    padding-top: 3.5%;
+    background-color: #131313be;
+    transition: all 0.4s ease;
+    animation: moveDownInBasicJump;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+
+    @media (max-width: 575px) {
+      width: 80%;
+      padding: 7%;
+    }
+
+    &-input-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      @media (max-width: 575px) {
+        flex-direction: column;
+      }
+    }
+
+    &-input {
+      width: 22rem;
+      height: 3.5rem;
+      padding: 4%;
+      background-color: #38364b;
+      border: none;
+      color: #ffffff;
+      transition: all 0.4s ease;
+      outline: none;
+
+      @media (max-width: 575px) {
+        width: 100%;
+        margin-bottom: 1.5rem;
+      }
+
+      &::-webkit-input-placeholder {
+        color: #635e8f;
+      }
+
+      &:hover {
+        box-shadow: inset 0 0 0 1px #a19ae0;
+      }
+
+      &:focus {
+        box-shadow: inset 0 0 0 1px #8c86c5;
+        color: #ffffff;
+      }
+    }
+
+    &-btn {
+      width: 7rem;
+      background-color: #ffffff;
+      color: #ffffff;
+      border-radius: 0;
+      border: none;
+      background-color: #635ca1;
+      transition: all 0.4s ease;
+
+      @media (max-width: 575px) {
+        width: 3.5rem;
+        height: 3.5rem;
+        align-self: flex-end;
+      }
+
+      &:hover {
+        background-color: #544e86;
+      }
+    }
+
+    &-headline {
+      margin-bottom: 2rem;
+      color: #ffffff;
+    }
+  }
+
+}
+
+.user-genres {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40rem;
+  padding: 3%;
+  background-color: #131313be;
+  animation: faderBasic;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    background-color: transparent;
+  }
+
+  & .user-genres-headline {
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+
+    @media (max-width: 767px) {
+      font-size: 1.5em;
+    }
+  }
+
+  & .user-genres-minimum {
+    color: #dddddd;
+    margin-bottom: 2rem;
+
+    @media (max-width: 767px) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  & .user-genres-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    @media (max-width: 767px) {
+      margin-bottom: 1rem;
+    }
+
+    & .user-genres-btn {
+      position: relative;
+      flex-grow: 1;
+      min-width: 20%;
+      margin: 0.8%;
+      padding: 3%;
+      background-color: #dddddd;
+      border: none;
+      outline: none;
+      color: #ffffff;
+      font-weight: 500;
+      transition: all 0.4s ease;
+      background-color: #433f5ab7;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        transition: all 0.4s ease;
+        z-index: -1;
+      }
+
+      &--comedy::before {
+        background-image: url('../img/comedy.jpg');
+      }
+
+      &--horror::before {
+        background-image: url('../img/horror.jpg');
+      }
+
+      &--action::before {
+        background-image: url('../img/superhero.jpg');
+      }
+
+      &--superhero::before {
+        background-image: url('../img/action.jpg');
+      }
+
+      &--fantasy::before {
+        background-image: url('../img/fantasy.jpg');
+      }
+
+      &--sci-fi::before {
+        background-image: url('../img/sci-fi.jpg');
+      }
+
+      &--animation::before {
+        background-image: url('../img/animation.jpg');
+      }
+
+      &--romance::before {
+        background-image: url('../img/romance.jpg');
+      }
+
+      &--thriller::before {
+        background-image: url('../img/thriller.jpg');
+      }
+
+      &--drama::before {
+        background-image: url('../img/drama.jpg');
+      }
+
+      &:hover::before {
+        background-size: 110%
+      }
+
+      @media (max-width: 767px) {
+        margin: 1.5%;
+        padding: 5%;
+      }
+
+      &--active {
+        box-shadow: inset 0 0 0 3px #988cfc;
+
+        &:hover::before {
+          background-size: cover
+        }
+      }
+    }
+  }
+
+  & .start-page-btn {
+    align-self: flex-end;
+    width: 8rem;
+    padding: 2%;
+    color: #ffffff;
+    background-color: #635ca1;
+    border: none;
+    transition: all 0.4s ease;
+    outline: none;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      padding: 4%;
+    }
+
+    &:hover {
+      background-color: #58528f;
+    }
+  }
+}
+
+.pop-info {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  max-width: 270px;
+  padding: 1rem;
+  box-shadow: 0 5px 20px 3px rgba(0,0,0,0.2);
+  background-color: #9a8cc0;
+  color: #ffffff;
+  animation: moveDownInBasicJumpPop;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}

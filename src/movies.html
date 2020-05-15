@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Movie search</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/610b32c0c4.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="movies-body">
+  <header class="navbar-user">
+    <div class="nav-width-wrapper d-flex justify-content-between align-items-center">
+      <div class="options">
+        <a>
+          <img src="./img/logo.png" alt="logo" width="100" class="logo-relative mr-4 ml-3">
+        </a>
+        <a class="ml-4 a-actve" href="#"><i class="fas fa-home mr-2"></i>Home</a>
+        <a class="ml-4 a-basic" href="#"><i class="fas fa-heart mr-2"></i>My list</a>
+      </div>
+      <div class="search-bar d-flex">
+        <input type="text" class="search-input" placeholder="What do we look for?"></input>
+        <button class="search-btn"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </header>
+  <div class="container main-content d-flex flex-column" id="movies-slider">
+    <section id="owl-2">
+      <div class="owl-carousel owl-theme">
+        <div class="movie-item d-flex justify-content-start flex-column align-items-end">
+
+          <div class="item-wrapper">
+            <div class="poster-wrapper">
+              <div class="info-poster">
+                <button class="about-add-favorite">
+                  <svg id="color" enable-background="new 0 0 24 24" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="m11.466 22.776c.141.144.333.224.534.224s.393-.08.534-.224l9.594-9.721c4.001-4.053 1.158-11.055-4.532-11.055-3.417 0-4.985 2.511-5.596 2.98-.614-.471-2.172-2.98-5.596-2.98-5.672 0-8.55 6.984-4.531 11.055z"
+                      fill="#dddddd" /></svg>
+                </button>
+              </div>
+            </div>
+            <div class="global-movie">
+              <p class="about-imdb-middle about-imdb-high">8.7</p>
+            </div>
+            <div class="about">
+              <div class="about-static">
+                <p class="info-year">2014</p>
+                <p class="info-time">136 minutes</p>
+                <p class="info-rated">18+</p>
+              </div>
+              <div class="info-genres">
+                <p>Action</p>
+                <p>Sci-Fi</p>
+              </div>
+              <h2 class="about-name">Interstellar</h2>
+              <p class="about-description">A team of explorers travel through a wormhole in space in an attempt to
+                ensure
+                humanity's survival.
+                <div class="about-people">
+                  <p class="about-director"><strong>Director</strong>: Christopher Nolan</p>
+                  <p class="about-writers"><strong>Writers</strong>: Jonathan Nolan ,Christopher Nolan</p>
+                  <p class="about-starring"><strong>Starring</strong>: Keanu Reeves, Keanu Reeves, Keanu Reeves, Keanu
+                    Reeves, Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss,
+                    Hugo
+                    Weaving</p>
+                </div>
+            </div>
+
+            <button class="watch-on-imdb align-self-end">Watch on IMDb<i class="fas fa-arrow-right ml-2"></i></button>
+          </div>
+
+        </div>
+        <div class="movie-item d-flex justify-content-start flex-column align-items-end">
+
+          <div class="item-wrapper">
+            <div class="poster-wrapper">
+              <div class="info-poster">
+                <button class="about-add-favorite">
+                  <svg id="color" enable-background="new 0 0 24 24" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="m11.466 22.776c.141.144.333.224.534.224s.393-.08.534-.224l9.594-9.721c4.001-4.053 1.158-11.055-4.532-11.055-3.417 0-4.985 2.511-5.596 2.98-.614-.471-2.172-2.98-5.596-2.98-5.672 0-8.55 6.984-4.531 11.055z"
+                      fill="#dddddd" /></svg>
+                </button>
+              </div>
+            </div>
+            <div class="global-movie">
+              <p class="about-imdb-middle about-imdb-high">8.7</p>
+            </div>
+            <div class="about">
+              <div class="about-static">
+                <p class="info-year">2014</p>
+                <p class="info-time">136 minutes</p>
+                <p class="info-rated">18+</p>
+              </div>
+              <div class="info-genres">
+                <p>Action</p>
+                <p>Sci-Fi</p>
+              </div>
+              <h2 class="about-name">Interstellar</h2>
+              <p class="about-description">A team of explorers travel through a wormhole in space in an attempt to
+                ensure
+                humanity's survival.
+                <div class="about-people">
+                  <p class="about-director"><strong>Director</strong>: Christopher Nolan</p>
+                  <p class="about-writers"><strong>Writers</strong>: Jonathan Nolan ,Christopher Nolan</p>
+                  <p class="about-starring"><strong>Starring</strong>: Keanu Reeves, Keanu Reeves, Keanu Reeves, Keanu
+                    Reeves, Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss,
+                    Hugo
+                    Weaving</p>
+                </div>
+            </div>
+
+            <button class="watch-on-imdb align-self-end">Watch on IMDb<i class="fas fa-arrow-right ml-2"></i></button>
+          </div>
+
+        </div>
+        <div class="movie-item d-flex justify-content-start flex-column align-items-end">
+
+          <div class="item-wrapper">
+            <div class="poster-wrapper">
+              <div class="info-poster">
+                <button class="about-add-favorite">
+                  <svg id="color" enable-background="new 0 0 24 24" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="m11.466 22.776c.141.144.333.224.534.224s.393-.08.534-.224l9.594-9.721c4.001-4.053 1.158-11.055-4.532-11.055-3.417 0-4.985 2.511-5.596 2.98-.614-.471-2.172-2.98-5.596-2.98-5.672 0-8.55 6.984-4.531 11.055z"
+                      fill="#dddddd" /></svg>
+                </button>
+              </div>
+            </div>
+            <div class="global-movie">
+              <p class="about-imdb-middle about-imdb-high">8.7</p>
+            </div>
+            <div class="about">
+              <div class="about-static">
+                <p class="info-year">2014</p>
+                <p class="info-time">136 minutes</p>
+                <p class="info-rated">18+</p>
+              </div>
+              <div class="info-genres">
+                <p>Action</p>
+                <p>Sci-Fi</p>
+              </div>
+              <h2 class="about-name">Interstellar</h2>
+              <p class="about-description">A team of explorers travel through a wormhole in space in an attempt to
+                ensure
+                humanity's survival.
+                <div class="about-people">
+                  <p class="about-director"><strong>Director</strong>: Christopher Nolan</p>
+                  <p class="about-writers"><strong>Writers</strong>: Jonathan Nolan ,Christopher Nolan</p>
+                  <p class="about-starring"><strong>Starring</strong>: Keanu Reeves, Keanu Reeves, Keanu Reeves, Keanu
+                    Reeves, Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss,
+                    Hugo
+                    Weaving</p>
+                </div>
+            </div>
+
+            <button class="watch-on-imdb align-self-end">Watch on IMDb<i class="fas fa-arrow-right ml-2"></i></button>
+          </div>
+
+        </div>
+        <div class="movie-item d-flex justify-content-start flex-column align-items-end">
+
+          <div class="item-wrapper">
+            <div class="poster-wrapper">
+              <div class="info-poster">
+                <button class="about-add-favorite">
+                  <svg id="color" enable-background="new 0 0 24 24" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="m11.466 22.776c.141.144.333.224.534.224s.393-.08.534-.224l9.594-9.721c4.001-4.053 1.158-11.055-4.532-11.055-3.417 0-4.985 2.511-5.596 2.98-.614-.471-2.172-2.98-5.596-2.98-5.672 0-8.55 6.984-4.531 11.055z"
+                      fill="#dddddd" /></svg>
+                </button>
+              </div>
+            </div>
+            <div class="global-movie">
+              <p class="about-imdb-middle about-imdb-high">8.7</p>
+            </div>
+            <div class="about">
+              <div class="about-static">
+                <p class="info-year">2014</p>
+                <p class="info-time">136 minutes</p>
+                <p class="info-rated">18+</p>
+              </div>
+              <div class="info-genres">
+                <p>Action</p>
+                <p>Sci-Fi</p>
+              </div>
+              <h2 class="about-name">Interstellar</h2>
+              <p class="about-description">A team of explorers travel through a wormhole in space in an attempt to
+                ensure
+                humanity's survival.
+                <div class="about-people">
+                  <p class="about-director"><strong>Director</strong>: Christopher Nolan</p>
+                  <p class="about-writers"><strong>Writers</strong>: Jonathan Nolan ,Christopher Nolan</p>
+                  <p class="about-starring"><strong>Starring</strong>: Keanu Reeves, Keanu Reeves, Keanu Reeves, Keanu
+                    Reeves, Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss,
+                    Hugo
+                    Weaving</p>
+                </div>
+            </div>
+
+            <button class="watch-on-imdb align-self-end">Watch on IMDb<i class="fas fa-arrow-right ml-2"></i></button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="main-footer d-flex justify-content-center">
+    <div class="d-flex justify-content-between align-items-center footer-info">
+      <p class="rs-school">RS School 2020q1</p>
+      <span class="line-info-footer"></span>
+      <a href="https://github.com/crash4star" target="_blank">crash4star<i class="fab fa-github"></i></a>
+    </div>
+  </footer>
+</body>
+
+</html>
